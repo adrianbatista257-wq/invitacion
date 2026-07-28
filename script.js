@@ -1,82 +1,135 @@
+const mensaje = `💜 Feliz cumpleaños, Massiel Cristina Córdoba Martínez.
+
+Hoy quiero desearte un día lleno de felicidad, paz y muchísimas bendiciones.
+
+Espero que Dios siga guiando cada uno de tus pasos y que todos tus sueños se hagan realidad.
+
+Gracias por permitirme compartir contigo momentos especiales. Eres una persona muy importante para mí y deseo de todo corazón que este nuevo año de vida esté lleno de sonrisas, amor, salud y personas que realmente valoren el gran corazón que tienes.
+
+Nunca olvides lo valiosa, fuerte y especial que eres.
+
+Que este cumpleaños marque el inicio de una nueva etapa llena de alegrías y momentos inolvidables.
+
+💜 Feliz cumpleaños, Massiel.
+
+Con mucho cariño,
+
+Adrián 💜`;
+
 const btn = document.getElementById("giftBtn");
 const welcome = document.getElementById("welcome");
 const letter = document.getElementById("letter");
-const typedText = document.getElementById("typedText");
-const hiddenMessage = document.getElementById("message");
+const typed = document.getElementById("typed");
 
 btn.addEventListener("click", () => {
-    welcome.style.display = "none";
+
+    welcome.classList.add("hidden");
     letter.classList.remove("hidden");
 
-    escribirCarta();
+    escribirMensaje();
+
 });
 
-function escribirCarta() {
-    const texto = hiddenMessage.innerHTML;
+function escribirMensaje(){
 
     let i = 0;
-    typedText.innerHTML = "";
 
-    const intervalo = setInterval(() => {
-        typedText.innerHTML = texto.substring(0, i);
+    typed.textContent = "";
 
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth"
-        });
+    const intervalo = setInterval(()=>{
+
+        typed.textContent += mensaje.charAt(i);
 
         i++;
 
-        if (i > texto.length) {
+        window.scrollTo(0, document.body.scrollHeight);
+
+        if(i >= mensaje.length){
+
             clearInterval(intervalo);
+
         }
-    }, 18);
+
+    },35);
+
 }
 
-// Partículas
-const particles = document.getElementById("particles");
+/* FLORES */
 
-for (let i = 0; i < 70; i++) {
-    const p = document.createElement("span");
+function crearFlor(){
 
-    p.style.left = Math.random() * 100 + "%";
-    p.style.top = Math.random() * 100 + "%";
-    p.style.animationDuration = (3 + Math.random() * 6) + "s";
-    p.style.animationDelay = Math.random() * 5 + "s";
+    const flor = document.createElement("div");
 
-    particles.appendChild(p);
+    flor.className = "flower";
+
+    flor.innerHTML = "🌸";
+
+    flor.style.left = Math.random()*100+"vw";
+
+    flor.style.fontSize = (20 + Math.random()*25)+"px";
+
+    flor.style.animationDuration = (6 + Math.random()*6)+"s";
+
+    document.body.appendChild(flor);
+
+    setTimeout(()=>{
+
+        flor.remove();
+
+    },12000);
+
 }
 
-// Corazones
-const hearts = document.getElementById("hearts");
+/* CORAZONES */
 
-for (let i = 0; i < 25; i++) {
-    const h = document.createElement("div");
+function crearCorazon(){
 
-    h.innerHTML = "💜";
-    h.style.position = "absolute";
-    h.style.left = Math.random() * 100 + "%";
-    h.style.fontSize = (18 + Math.random() * 22) + "px";
-    h.style.animation = `float ${8 + Math.random() * 8}s linear infinite`;
-    h.style.animationDelay = Math.random() * 8 + "s";
+    const corazon = document.createElement("div");
 
-    hearts.appendChild(h);
+    corazon.className = "heart";
+
+    corazon.innerHTML = "💜";
+
+    corazon.style.left = Math.random()*100+"vw";
+
+    corazon.style.fontSize = (18 + Math.random()*20)+"px";
+
+    corazon.style.animationDuration = (7 + Math.random()*5)+"s";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(()=>{
+
+        corazon.remove();
+
+    },12000);
+
 }
 
-// Flores
-const flowers = document.getElementById("flowers");
+/* PARTÍCULAS */
 
-const flores = ["🌸", "🌺", "💮"];
+function crearParticula(){
 
-for (let i = 0; i < 30; i++) {
-    const f = document.createElement("div");
+    const p = document.createElement("div");
 
-    f.innerHTML = flores[Math.floor(Math.random() * flores.length)];
-    f.style.position = "absolute";
-    f.style.left = Math.random() * 100 + "%";
-    f.style.fontSize = (20 + Math.random() * 18) + "px";
-    f.style.animation = `fall ${8 + Math.random() * 8}s linear infinite`;
-    f.style.animationDelay = Math.random() * 8 + "s";
+    p.className = "spark";
 
-    flowers.appendChild(f);
+    p.style.left = Math.random()*100+"vw";
+
+    p.style.top = (40 + Math.random()*60)+"vh";
+
+    document.body.appendChild(p);
+
+    setTimeout(()=>{
+
+        p.remove();
+
+    },4000);
+
 }
+
+setInterval(crearFlor,500);
+
+setInterval(crearCorazon,800);
+
+setInterval(crearParticula,250);
