@@ -1,173 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
 <meta charset="UTF-8">
-<title>💖 Invitación Especial 💖</title>
-
-<style>
-body{
-    margin:0;
-    background:linear-gradient(to bottom,#ffd6e7,#fff5f8);
-    font-family:Arial,sans-serif;
-    text-align:center;
-    overflow:hidden;
-}
-
-.personaje{
-    font-size:100px;
-    margin-top:30px;
-    animation:saltar 1.5s infinite;
-}
-
-@keyframes saltar{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-20px);}
-}
-
-h1{
-    color:#ff4081;
-    margin-top:10px;
-}
-
-.opcion{
-    background:#ff69b4;
-    color:white;
-    border:none;
-    padding:15px 25px;
-    margin:8px;
-    border-radius:15px;
-    font-size:18px;
-    cursor:pointer;
-}
-
-#respuesta{
-    margin-top:15px;
-    font-size:24px;
-    color:#e91e63;
-}
-
-#si,#no{
-    padding:15px 30px;
-    margin:15px;
-    border:none;
-    border-radius:15px;
-    font-size:22px;
-    cursor:pointer;
-}
-
-#si{
-    background:#4CAF50;
-    color:white;
-}
-
-#no{
-    background:#ff4d4d;
-    color:white;
-}
-
-.corazon{
-    position:absolute;
-    font-size:25px;
-    animation:subir 6s linear infinite;
-}
-
-@keyframes subir{
-    from{
-        transform:translateY(100vh);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-100px);
-        opacity:0;
-    }
-}
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feliz Cumpleaños Massiel 💜</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div class="personaje">🐻🌹</div>
-
-<h1>💖 Tengo una pregunta para ti 💖</h1>
-
-<h2>¿Cuál de estas opciones te gustaría más? 🥰</h2>
-
-<button class="opcion" onclick="elegir('🍽️ Ir a comer')">
-🍽️ Ir a comer
-</button>
-
-<button class="opcion" onclick="elegir('🎬 Ir al cine')">
-🎬 Ir al cine
-</button>
-
-<button class="opcion" onclick="elegir('☕ Tomar un café')">
-☕ Tomar un café
-</button>
-
-<button class="opcion" onclick="elegir('🌅 Ver el atardecer')">
-🌅 Ver el atardecer
-</button>
-
-<div id="respuesta"></div>
-
-<h2 style="color:#ff4081;">
-¿Te gustaría salir conmigo? 💕
-</h2>
-
-<button id="si" onclick="acepto()">
-❤️ Sí ❤️
-</button>
-
-<button id="no" onmouseover="moverNo()">
-🙈 No 🙈
-</button>
-
-<div id="resultado"></div>
-
-<script>
-
-function elegir(opcion){
-    document.getElementById("respuesta").innerHTML =
-    "🥰 Excelente elección: <b>"+opcion+"</b> ❤️";
-}
-
-function acepto(){
-    document.body.innerHTML = `
-    <div style="padding-top:120px">
-        <h1 style="color:#ff4081;font-size:50px;">
-        🥰 ¡Qué felicidad! 🥰
-        </h1>
-
-        <h2>
-        🌹 Prometo que la pasaremos increíble 🌹
-        </h2>
-
-        <h1>
-        ❤️ Gracias por aceptar ❤️
-        </h1>
-
-        <div style="font-size:120px;">🐻💖🌹</div>
-    </div>
-    `;
-}
-
-function moverNo(){
-    let boton=document.getElementById("no");
-    boton.style.position="absolute";
-    boton.style.left=Math.random()*80+"%";
-    boton.style.top=Math.random()*80+"%";
-}
-
-for(let i=0;i<40;i++){
-    let c=document.createElement("div");
-    c.className="corazon";
-    c.innerHTML="💖";
-    c.style.left=Math.random()*100+"vw";
-    c.style.animationDelay=Math.random()*6+"s";
-    document.body.appendChild(c);
-}
-
-</script>
-
-</body>
-</html>
+<div class="bg"></div>
+<div class="card">
+<h1>🎂 ¡Feliz Cumpleaños! 🎂</h1>
+<h2>Massiel Cristina Córdoba Martínez 💜</h2>
+<button id="btn">💜 Descubrir mi sorpresa 💜</button>
+<div id="msg" class="hidden">
+<p><strong>Feliz cumpleaños, Massiel Cristina Córdoba Martínez.</strong> 💜🎉🌸</p>
+<p>Hoy quiero desearte un cumpleaños lleno de paz, sonrisas y momentos que te recuerden lo valiosa que eres.</p>
+<p>La vida no siempre ha sido fácil contigo, especialmente en el amor, y sé que has pasado por momentos que dejaron huellas en tu corazón.</p>
+<p>Sin embargo, admiro profundamente la fuerza que tienes para seguir creyendo y dar una nueva oportunidad.</p>
+<p>Me siento muy agradecido de que hoy estemos intentando construir algo juntos.</p>
+<p>En este nuevo año de vida deseo que Dios llene tu camino de bendiciones, salud, tranquilidad y felicidad.</p>
+<p>Gracias por permitirme ser parte de tu vida.</p>
+<p><strong>Con mucho cariño, Adrián. 💜</strong></p>
+</div>
+</div>
+<script src="script.js"></script>
+</body></html>
