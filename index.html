@@ -2,68 +2,94 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Feliz Cumpleaños Massiel 💜</title>
+    <meta charset="UTF-8">
 
-<link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <title>🎂 Feliz Cumpleaños 💜</title>
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div id="particles"></div>
-<div id="hearts"></div>
-<div id="flowers"></div>
+    <!-- Fondo de efectos -->
+    <div id="flowers"></div>
+    <div id="hearts"></div>
+    <div id="particles"></div>
 
-<section id="welcome">
+    <!-- Pantalla de bienvenida -->
+    <section class="container" id="welcome">
 
-<div class="glass">
+        <h1>🎂 ¡Feliz Cumpleaños! 🎂</h1>
 
-<h1>🎂 ¡Feliz Cumpleaños! 🎂</h1>
+        <h2>Massiel Cristina Córdoba Martínez</h2>
 
-<h2>Massiel Cristina Córdoba Martínez 💜</h2>
+        <p class="subtitle">
+            Hay una sorpresa muy especial preparada para ti...
+        </p>
 
-<p class="subtitle">
+        <button id="giftBtn">
+            💜 Abrir mi regalo 💜
+        </button>
 
-Hoy preparé un pequeño detalle para ti...
+    </section>
 
-Espero que lo leas hasta el final porque cada palabra fue escrita con mucho cariño.
+    <!-- Carta -->
+<!-- Carta -->
+<section class="container hidden" id="letter">
 
-</p>
+    <div class="card">
 
-<button id="openGift">
-💜 Abrir mi regalo 💜
-</button>
+        <div class="top-decoration">
+            🌸 💜 🌸
+        </div>
 
-</div>
+        <h2>💌 Para la persona más especial 💌</h2>
+
+        <p class="intro">
+            Si llegaste hasta aquí...
+            es porque abriste este pequeño regalo preparado con mucho cariño.
+        </p>
+
+        <hr>
+
+        <!-- Aquí aparecerá el mensaje escribiéndose -->
+        <p id="typed"></p>
+
+        <div id="finalMessage" class="hidden">
+
+            <hr>
+
+            <h2>
+                🎂 ¡Feliz Cumpleaños! 🎂
+            </h2>
+
+            <h3>
+                Massiel Cristina Córdoba Martínez
+            </h3>
+
+            <p>
+                Que Dios te bendiga siempre y que nunca te falten motivos para sonreír.
+            </p>
+
+            <div class="signature">
+
+                <p>Con mucho cariño...</p>
+
+                <h2>💜 Adrián 💜</h2>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<section id="letter" class="hidden">
-
-<div class="glass">
-
-<h1>💌 Una carta para ti 💌</h1>
-
-<div id="typedText"></div>
-  
-<div class="firma">
-
-Con mucho cariño,<br>
-
-<b>Adrián 💜</b>
-
-</div>
-
-</div>
-
-</section>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
